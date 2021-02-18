@@ -5,7 +5,6 @@ import {Errors} from '@store/types/auth';
 export interface ErrorStateValues {
   errors: Array<Errors>;
   showErrors: boolean;
-  errorsStore: ErrorStateValues;
 }
 
 const ErrorsState: ErrorStateValues = {
