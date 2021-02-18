@@ -1,17 +1,18 @@
-import {LOGIN} from '@store/constants/auth';
 import {LoginInput, LoginResponse} from '@store/types/auth';
 import {
   actionWithoutPayload,
   activityFailed,
 } from '@store/actions/publicActions';
 import {call, put, select, takeLatest} from 'redux-saga/effects';
-import {loginUser} from '@store/actions/auth/api';
 import {storeToken, storeUser} from '@store/actions/auth/login';
 
+import {LOGIN} from '@store/constants/auth';
 import {LoginStateValues} from '@store/reducers/login';
+import {loginUser} from '@store/actions/auth/api';
 import {serverError} from '@store/constants/shared';
 
-const getLoginInfo = (state: LoginStateValues) => state.loginStore?.loginInfo;
+const getLoginInfo = (state: LoginStateValues): LoginInput | undefined =>
+  state.loginInfo;
 
 function* _loginUser() {
   let loginInfo: LoginInput = yield select(getLoginInfo);

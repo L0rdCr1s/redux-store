@@ -8,7 +8,6 @@ export interface LoginStateValues {
   token: string;
   isLoggingIn: Boolean;
   errors: Array<Errors>;
-  loginStore?: LoginStateValues;
 }
 
 const LoginState: LoginStateValues = {

@@ -1,11 +1,10 @@
-import {User} from '@store/types/auth';
 import {AnyAction} from 'redux';
 import {USER} from '@store/constants/auth';
+import {User} from '@store/types/auth';
 
 export interface UserStateValues {
   userInfo?: User;
   token: string;
-  userStore?: UserStateValues;
 }
 
 const UserState: UserStateValues = {
